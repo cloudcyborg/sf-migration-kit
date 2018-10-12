@@ -1,0 +1,23 @@
+<project name="Salesforce Migration Tool" default="test" basedir="." xmlns:sf="antlib:com.salesforce">
+
+    <property environment="env"/>
+		
+	<!-- ***************************Libraries. Don't modify **************************************************************-->
+    <taskdef resource="com/salesforce/antlib.xml" uri="antlib:com.salesforce">
+        <classpath>
+            <pathelement location="../ant-salesforce.jar" />        	
+        </classpath>
+    </taskdef>
+	
+	<taskdef resource="net/sf/antcontrib/antlib.xml">
+		<classpath>
+			<pathelement location="./ant-contrib-1.0b3.jar"/>
+		</classpath>
+	</taskdef>
+	<!-- ******************************************************************************************************************-->
+
+	<import file="./builds/sfdc/sfdc-targets.xml"/>
+	<import file="./builds/sfdc/sfdc-targets-with-tests.xml"/>
+	<import file="./builds/basic-operation-targets.xml"/>
+	
+</project>

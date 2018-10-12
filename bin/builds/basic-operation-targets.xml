@@ -1,0 +1,181 @@
+<project name="Basic Operations Targets" default="test" basedir="." xmlns:sf="antlib:com.salesforce">
+
+	<!-- 		
+		Parameters Used:
+			* Username
+			* Password
+			* Url
+			
+			* Directory - This is the folder which will contain the package.xml.
+			
+		These params are specified when the target is being called from the batch file.
+	-->
+	<target name="backup_from_org">
+	
+		<property name="oprFolder" value="${Directory}/[BACKUP] from ${Orgname} on ${Tstamp}"/>
+		<mkdir dir="${oprFolder}"/>	
+		
+		<trycatch property="errMsg">	
+			<try>
+				<antcall target="retrieve">
+					<param name="username" value="${Username}"/>
+					<param name="password" value="${Password}"/>
+					<param name="serverurl" value="${Url}"/>
+					<param name="opDir" value="${oprFolder}"/>
+					<param name="pkgPath" value="${Directory}"/>
+					<!-- Leave it blank because we are using the base folder. This is used only in case of migration-->
+					<param name="pkgFolder" value=""/>		
+				</antcall>
+			</try>
+			<catch>
+				<echo>${errMsg}</echo>
+				<antcall target="deleteOpFolder">
+					<param name="delDir" value="${oprFolder}"/>
+				</antcall>
+			</catch>
+			<finally>
+			</finally>
+		</trycatch>
+	</target>
+	
+	<target name="retrieve_from_org">	
+		
+		<trycatch property="errMsg">	
+			<try>
+				<antcall target="retrieve">
+					<param name="username" value="${Username}"/>
+					<param name="password" value="${Password}"/>
+					<param name="serverurl" value="${Url}"/>
+					<param name="opDir" value="${Directory}"/>
+					<param name="pkgPath" value="${Directory}"/>
+					<!-- Leave it blank because we are using the base folder. This is used only in case of migration-->
+					<param name="pkgFolder" value=""/>		
+				</antcall>
+			</try>
+			<catch>
+				<echo>${errMsg}</echo>
+			</catch>
+			<finally>
+			</finally>
+		</trycatch>
+	</target>
+	
+	
+	<!-- 		
+		Parameters Used:
+			* Username
+			* Password
+			* Url
+					
+			* Directory - 	This is the specified folder which contains the metadata
+							that needs to be deployed back to org. 
+	-->
+	<target name="validate_without_test_provided">	
+		<trycatch property="errMsg">	
+			<try>
+				<antcall target="validateWithoutSpecificTests">
+					<param name="username" value="${Username}"/>
+					<param name="password" value="${Password}"/>
+					<param name="serverurl" value="${Url}"/>
+					<param name="deployRootDir" value="${Directory}"/>
+				</antcall>
+			</try>
+			<catch>
+				<echo>${errMsg}</echo>
+			</catch>
+			<finally>
+			</finally>
+		</trycatch>
+	</target>
+	
+	
+	<!-- 	
+		Parameters Used:
+			* Username
+			* Password
+			* Url
+					
+			* Directory - 	This is the specified folder which contains the metadata
+							that needs to be deployed back to org. 
+			* TestClassNames - string consisting of test class names separated by 
+							semicolons
+	-->
+	<target name="validate_with_test_provided">
+		<trycatch property="errMsg">	
+			<try>	
+				<antcall target="validateWithSpecificTests">
+					<param name="username" value="${Username}"/>
+					<param name="password" value="${Password}"/>
+					<param name="serverurl" value="${Url}"/>
+					<param name="deployRootDir" value="${Directory}"/>
+					<param name="tests" value="${TestClassNames}"/>
+				</antcall>
+			</try>
+			<catch>
+				<echo>${errMsg}</echo>
+			</catch>
+			<finally>
+			</finally>
+		</trycatch>
+	</target>
+	
+	
+	<!-- 		
+		Parameters Used:
+			* Username
+			* Password
+			* Url
+					
+			* Directory - 	This is the specified folder which contains the metadata
+							that needs to be deployed back to org. 
+	-->
+	<target name="deploy_without_test_provided">
+		<trycatch property="errMsg">	
+			<try>	
+				<antcall target="deployWithoutSpecificTests">
+					<param name="username" value="${Username}"/>
+					<param name="password" value="${Password}"/>
+					<param name="serverurl" value="${Url}"/>
+					<param name="deployRootDir" value="${Directory}"/>
+				</antcall>
+			</try>
+			<catch>
+				<echo>${errMsg}</echo>
+			</catch>
+			<finally>
+			</finally>
+		</trycatch>
+	</target>
+	
+	
+	<!-- 
+		Parameters Used:
+			* Username
+			* Password
+			* Url
+					
+			* Directory - 	This is the specified folder which contains the metadata
+							that needs to be deployed back to org.
+			* TestClassNames - string consisting of test class names separated by 
+							semicolons
+	-->
+	<target name="deploy_with_test_provided">	
+		<trycatch property="errMsg">	
+			<try>
+				<antcall target="deployWithSpecificTests">
+					<param name="username" value="${Username}"/>
+					<param name="password" value="${Password}"/>
+					<param name="serverurl" value="${Url}"/>
+					<param name="deployRootDir" value="${Directory}"/>
+					<param name="tests" value="${TestClassNames}"/>
+				</antcall>
+			</try>
+			<catch>
+				<echo>${errMsg}</echo>
+			</catch>
+			<finally>
+			</finally>
+		</trycatch>
+	</target>
+
+ </project>

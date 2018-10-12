@@ -1,0 +1,22 @@
+<project name="SFDC ANT Targets" default="test" basedir="." xmlns:sf="antlib:com.salesforce">
+
+	<target name="retrieve">
+		<property name="retrieveDir" value="${opDir}/${pkgFolder}"/>
+		<mkdir dir="${retrieveDir}"/>	
+		<script language="javascript" src="./builds/sfdc/tasks.js"><![CDATA[retrieve();]]></script>
+	</target>
+	
+	<target name="validateWithoutSpecificTests">
+		<script language="javascript" src="./builds/sfdc/tasks.js"><![CDATA[validate();]]></script>	
+	</target>
+	
+	<target name="deployWithoutSpecificTests">
+		<script language="javascript" src="./builds/sfdc/tasks.js"><![CDATA[deploy();]]></script>			
+	</target>
+	
+	
+	<target name="deleteOpFolder">
+		<delete dir="${delDir}"/>
+	</target>
+	
+</project>
