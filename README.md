@@ -34,4 +34,4 @@ There is a tutorial video describing the installation and usage of the tool. Che
 	
 	[VIDEO LINK]
 
-For a detailed documentation on installation and usage, head over to the [wiki](/../wiki)	
+For a detailed documentation on installation and usage, head over to the [wiki](https://github.com/cloudcyborg/sf-migration-kit/wiki)	
