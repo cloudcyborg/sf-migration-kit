@@ -7,7 +7,7 @@ this will be rendered obsolete in a while.
 But if you are currently using Eclipse, or the ANT migration tool for retrival/deployment, and you face issues using them 
 (you know, like manually updating org details in the build.properties file, or others), this tool might just help you out.
 
-![SF Menu](/../cloudcyborg/sf-migration-kit/blob/media/Images/sf-menu.jpg?raw=true)
+![SF Menu](/../media/Images/sf-menu.jpg?raw=true)
 
 ---
 
