@@ -4,7 +4,7 @@
 
 With the introduction of the [SFDX](https://www.salesforce.com/products/platform/products/salesforce-dx/) lifecycle, 
 this will be rendered obsolete in a while. 
-But if you are currently using Eclipse, or the ANT migration tool for retrival/deployment, and you face issues using them 
+But if you are currently using **Eclipse**, or the **ANT migration tool** for retrival/deployment, and you face issues using them 
 (you know, like manually updating org details in the build.properties file, or others), this tool might just help you out.
 
 ![SF Menu](/../media/Images/sf-menu.jpg?raw=true)
