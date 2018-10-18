@@ -9,6 +9,8 @@ But if you are currently using **Eclipse**, or the **ANT migration tool** for re
 
 ![SF Menu](/../media/Images/sf-menu.jpg?raw=true)
 
+Download the zip [HERE](/../cloudcyborg/sf-migration-kit/raw/media/SFMKit_v1.0.zip)
+
 ---
 
 ### What it does?
