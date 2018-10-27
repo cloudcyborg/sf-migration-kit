@@ -32,7 +32,7 @@ I developed a basic version of this tool a while ago and have been refining it o
 to the community. Ever since I started using this tool in my projects, because of the smooth deployments I ensured, I've been in 
 charge of deployments/migration in almost all of them. Hopefully with this latest version, you will be benefitted as well. 	
 	
-There is a [tutorial video](https://youtu.be/hU85bCFa5w8) describing the installation and usage of the tool.
+There is a [tutorial video](https://youtu.be/HlA9p0goyKA) describing the installation and usage of the tool.
 	
 
 For a detailed documentation on installation and usage, head over to the [wiki](https://github.com/cloudcyborg/sf-migration-kit/wiki)	
