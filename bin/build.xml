@@ -22,7 +22,11 @@
 	
 	<!-- In case your network uses a proxy -->
 	<target name="proxy">
-		<setproxy proxyhost="" proxyport="" proxyuser="" proxypassword="" />
+		<property name="proxy.host" value=""/>
+		<property name="proxy.port" value=""/>
+		<property name="proxy.username" value=""/>
+		<property name="proxy.password" value=""/>
+		<!--<setproxy proxyhost="${proxy.host}" proxyport="${proxy.port}" proxyuser="${proxy.username}" proxypassword="${proxy.password}" />-->
 	</target>
 	
 </project>
