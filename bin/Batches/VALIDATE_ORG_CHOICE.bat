@@ -14,7 +14,7 @@ FOR %%o IN (%orgchoice%) DO (
 		EXIT
 	)
 	
-	IF %%o GTR !n! (
+	IF %%o GEQ !n! (
 		CLS
 		ECHO ERROR: No org associated with this choice : %%o
 		ECHO.
