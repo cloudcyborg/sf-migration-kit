@@ -1,4 +1,4 @@
-<project name="Salesforce Migration Tool" default="test" basedir="." xmlns:sf="antlib:com.salesforce">
+<project name="Salesforce Migration Kit" default="test" basedir="." xmlns:sf="antlib:com.salesforce">
 
     <property environment="env"/>
 		
@@ -19,5 +19,10 @@
 	<import file="./builds/sfdc/sfdc-targets.xml"/>
 	<import file="./builds/sfdc/sfdc-targets-with-tests.xml"/>
 	<import file="./builds/basic-operation-targets.xml"/>
+	
+	<!-- In case your network uses a proxy -->
+	<target name="proxy">
+		<setproxy proxyhost="" proxyport="" proxyuser="" proxypassword="" />
+	</target>
 	
 </project>
