@@ -22,10 +22,12 @@
 	
 	<!-- In case your network uses a proxy -->
 	<target name="proxy">
-		<property name="proxy.host" value=""/>
-		<property name="proxy.port" value=""/>
-		<property name="proxy.username" value=""/>
-		<property name="proxy.password" value=""/>
+		<property name="proxy.host" value="your.proxy.host"/>
+		<property name="proxy.port" value="your.proxy.port.number"/>
+		<property name="proxy.username" value="your.username"/>
+		<property name="proxy.password" value="your.password"/>
+		
+		<!-- Uncomment only if you are using proxy and set the values above -->
 		<!--<setproxy proxyhost="${proxy.host}" proxyport="${proxy.port}" proxyuser="${proxy.username}" proxypassword="${proxy.password}" />-->
 	</target>
 	
